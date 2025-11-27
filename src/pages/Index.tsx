@@ -82,8 +82,16 @@ export default function Index() {
               Используем только проверенные методики с доказанной эффективностью
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
+              {
+                icon: 'Snowflake',
+                title: 'Криолиполиз',
+                description: 'Безоперационное удаление жировых отложений методом контролируемого охлаждения',
+                image: 'https://cdn.poehali.dev/projects/1c3ec3aa-44cb-4eca-824d-76aa3ffab0b2/files/2458eb8d-57fb-4648-9193-bf51b47fb86f.jpg',
+                duration: '40-60 минут',
+                result: 'Видимый эффект через 2-3 недели'
+              },
               {
                 icon: 'Activity',
                 title: 'Вибромассаж',
@@ -217,6 +225,7 @@ export default function Index() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
+              { service: 'Криолиполиз', zone: '1 зона', price: '15 000' },
               { service: 'Вибромассаж', zone: '1 сеанс', price: '3 500' },
               { service: 'Детокс обёртывания', zone: '1 процедура', price: '4 500' },
               { service: 'Лифтинг обёртывания', zone: '1 процедура', price: '5 000' },
