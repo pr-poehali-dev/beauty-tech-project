@@ -8,6 +8,7 @@ import Icon from '@/components/ui/icon';
 
 export default function Index() {
   const [snowflakes, setSnowflakes] = useState<Array<{id: number, left: string, duration: string, delay: string, size: number}>>([]);
+  const [iceParticles, setIceParticles] = useState<Array<{id: number, top: string, left: string, delay: string, duration: string}>>([]);
 
   useEffect(() => {
     const flakes = Array.from({ length: 20 }, (_, i) => ({
@@ -18,6 +19,15 @@ export default function Index() {
       size: 4 + Math.random() * 6
     }));
     setSnowflakes(flakes);
+
+    const particles = Array.from({ length: 12 }, (_, i) => ({
+      id: i,
+      top: `${20 + Math.random() * 30}%`,
+      left: `${10 + Math.random() * 80}%`,
+      delay: `${Math.random() * 3}s`,
+      duration: `${3 + Math.random() * 2}s`
+    }));
+    setIceParticles(particles);
   }, []);
   const [formData, setFormData] = useState({
     name: '',
@@ -85,6 +95,20 @@ export default function Index() {
             
             <div className="relative mb-8">
               <div className="absolute inset-0 blur-3xl opacity-30 bg-gradient-to-r from-primary via-primary/50 to-primary/30 animate-glow" />
+              
+              {iceParticles.map((particle) => (
+                <div
+                  key={particle.id}
+                  className="ice-particle animate-float"
+                  style={{
+                    top: particle.top,
+                    left: particle.left,
+                    animationDelay: particle.delay,
+                    animationDuration: particle.duration
+                  }}
+                />
+              ))}
+              
               <h1 className="font-heading text-7xl md:text-9xl font-black mb-2 tracking-wider leading-none relative animate-scale-in">
                 <span className="inline-block bg-gradient-to-br from-primary via-blue-400 to-primary/60 bg-clip-text text-transparent drop-shadow-2xl animate-float">
                   КРИО
@@ -106,11 +130,11 @@ export default function Index() {
               Криолиполиз • Обёртывания • РФ-лифтинг • Аппаратный массаж • Кавитация
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" onClick={() => scrollToSection('запись')}>
+              <Button size="lg" className="btn-frost" onClick={() => scrollToSection('запись')}>
                 <Icon name="Calendar" className="mr-2" size={20} />
                 Записаться на консультацию
               </Button>
-              <Button size="lg" variant="outline" onClick={() => scrollToSection('услуги')}>
+              <Button size="lg" variant="outline" className="btn-frost" onClick={() => scrollToSection('услуги')}>
                 Наши услуги
               </Button>
             </div>

@@ -111,3 +111,60 @@
     font-family: "Montserrat", sans-serif;
   }
 }
+
+@layer components {
+  .btn-frost {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .btn-frost::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(14, 165, 233, 0.4) 50%,
+      transparent 70%
+    );
+    transform: translate(-50%, -50%);
+    transition:
+      width 0.6s ease,
+      height 0.6s ease;
+    pointer-events: none;
+  }
+
+  .btn-frost:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .btn-frost:hover {
+    box-shadow:
+      0 0 20px rgba(14, 165, 233, 0.6),
+      0 0 40px rgba(14, 165, 233, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .ice-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(14, 165, 233, 0.6) 100%
+    );
+    border-radius: 50%;
+    box-shadow:
+      0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(14, 165, 233, 0.4);
+    pointer-events: none;
+  }
+}
