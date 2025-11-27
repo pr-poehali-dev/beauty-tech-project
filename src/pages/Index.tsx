@@ -215,11 +215,15 @@ export default function Index() {
               Прозрачная ценовая политика без скрытых платежей
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { service: 'Криолиполиз', zone: '1 зона', price: '15 000' },
               { service: 'Вибромассаж', zone: '1 сеанс', price: '3 500' },
-              { service: 'Липолитики', zone: '1 зона', price: '8 000' },
+              { service: 'Детокс обёртывания', zone: '1 процедура', price: '4 500' },
+              { service: 'Лифтинг обёртывания', zone: '1 процедура', price: '5 000' },
+              { service: 'Горячее-холодное обёртывание', zone: '1 процедура', price: '5 500' },
+              { service: 'РФ-лифтинг', zone: '1 зона', price: '6 000' },
+              { service: 'Вибро- и вакуумный массаж', zone: '1 сеанс', price: '4 000' },
+              { service: 'Ультразвуковая кавитация', zone: '1 зона', price: '7 500' },
               { service: 'Консультация', zone: 'Первичная', price: 'Бесплатно' }
             ].map((item) => (
               <Card key={item.service} className="text-center">
