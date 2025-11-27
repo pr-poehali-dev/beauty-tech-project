@@ -54,10 +54,9 @@ export default function Index() {
             <Badge className="mb-6 text-base px-4 py-2" variant="secondary">
               ✨ Премиум студия коррекции фигуры
             </Badge>
-            <h1 className="font-heading text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-tight">
-              Студия коррекции фигуры
-              <span className="block mt-2 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                Крио Плюс
+            <h1 className="font-heading text-6xl md:text-8xl font-bold mb-8 tracking-tight leading-tight">
+              <span className="bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent">
+                КРИО+
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-4 leading-relaxed">
