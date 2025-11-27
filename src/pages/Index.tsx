@@ -82,16 +82,8 @@ export default function Index() {
               Используем только проверенные методики с доказанной эффективностью
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              {
-                icon: 'Snowflake',
-                title: 'Криолиполиз',
-                description: 'Безоперационное удаление жировых отложений с помощью холода',
-                image: 'https://cdn.poehali.dev/projects/1c3ec3aa-44cb-4eca-824d-76aa3ffab0b2/files/2458eb8d-57fb-4648-9193-bf51b47fb86f.jpg',
-                duration: '40-60 минут',
-                result: 'Видимый эффект через 2-3 недели'
-              },
               {
                 icon: 'Activity',
                 title: 'Вибромассаж',
@@ -102,19 +94,51 @@ export default function Index() {
               },
               {
                 icon: 'Droplets',
-                title: 'Липолитики',
-                description: 'Инъекционная методика расщепления жировых клеток в проблемных зонах',
+                title: 'Детокс обёртывания',
+                description: 'Выведение токсинов и лишней жидкости из организма, улучшение состояния кожи',
                 image: 'https://cdn.poehali.dev/projects/1c3ec3aa-44cb-4eca-824d-76aa3ffab0b2/files/2458eb8d-57fb-4648-9193-bf51b47fb86f.jpg',
-                duration: '20-30 минут',
-                result: 'Результат через 3-4 недели'
+                duration: '60 минут',
+                result: 'Видимый результат после курса'
               },
               {
-                icon: 'Target',
-                title: 'Коррекция фигуры',
-                description: 'Комплексная программа моделирования контуров тела',
+                icon: 'Sparkles',
+                title: 'Лифтинг обёртывания',
+                description: 'Подтяжка кожи, повышение тонуса и эластичности тканей',
                 image: 'https://cdn.poehali.dev/projects/1c3ec3aa-44cb-4eca-824d-76aa3ffab0b2/files/7e386a74-2d78-4e51-a840-62381550cc18.jpg',
-                duration: 'Индивидуально',
-                result: 'Стойкий результат'
+                duration: '60-90 минут',
+                result: 'Эффект после 3-5 процедур'
+              },
+              {
+                icon: 'Flame',
+                title: 'Горячее-холодное обёртывание',
+                description: 'Контрастная терапия для активизации обменных процессов и жиросжигания',
+                image: 'https://cdn.poehali.dev/projects/1c3ec3aa-44cb-4eca-824d-76aa3ffab0b2/files/2458eb8d-57fb-4648-9193-bf51b47fb86f.jpg',
+                duration: '75 минут',
+                result: 'Заметный эффект уже после первой процедуры'
+              },
+              {
+                icon: 'Zap',
+                title: 'РФ-лифтинг',
+                description: 'Радиочастотная подтяжка кожи без операции, стимуляция выработки коллагена',
+                image: 'https://cdn.poehali.dev/projects/1c3ec3aa-44cb-4eca-824d-76aa3ffab0b2/files/7e386a74-2d78-4e51-a840-62381550cc18.jpg',
+                duration: '30-40 минут',
+                result: 'Результат через 2-3 недели'
+              },
+              {
+                icon: 'Wind',
+                title: 'Вибро- и вакуумный массаж',
+                description: 'Комплексная аппаратная методика для борьбы с целлюлитом и коррекции фигуры',
+                image: 'https://cdn.poehali.dev/projects/1c3ec3aa-44cb-4eca-824d-76aa3ffab0b2/files/2458eb8d-57fb-4648-9193-bf51b47fb86f.jpg',
+                duration: '40-50 минут',
+                result: 'Видимый эффект после 5 процедур'
+              },
+              {
+                icon: 'Radio',
+                title: 'Ультразвуковая кавитация',
+                description: 'Безоперационная липосакция с помощью ультразвука для удаления жировых отложений',
+                image: 'https://cdn.poehali.dev/projects/1c3ec3aa-44cb-4eca-824d-76aa3ffab0b2/files/7e386a74-2d78-4e51-a840-62381550cc18.jpg',
+                duration: '30-60 минут',
+                result: 'Результат через 1-2 недели'
               }
             ].map((service) => (
               <Card key={service.title} className="overflow-hidden hover:shadow-lg transition-all duration-300 animate-scale-in">
