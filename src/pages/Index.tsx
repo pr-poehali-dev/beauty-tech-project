@@ -29,8 +29,8 @@ export default function Index() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Icon name="Sparkles" size={24} className="text-primary" />
-            <span className="font-heading text-xl font-bold">BeautyMed</span>
+            <Icon name="Snowflake" size={26} className="text-primary" />
+            <span className="font-heading text-xl font-bold">Крио Плюс</span>
           </div>
           <nav className="hidden md:flex gap-6">
             {['Услуги', 'Результаты', 'Цены', 'Отзывы', 'Специалисты', 'Контакты'].map((item) => (
@@ -50,16 +50,21 @@ export default function Index() {
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-accent/30 to-background" />
         <div className="container relative">
-          <div className="max-w-3xl mx-auto text-center animate-fade-in">
-            <Badge className="mb-4" variant="secondary">
-              Профессиональная коррекция фигуры
+          <div className="max-w-4xl mx-auto text-center animate-fade-in">
+            <Badge className="mb-6 text-base px-4 py-2" variant="secondary">
+              ✨ Премиум студия коррекции фигуры
             </Badge>
-            <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6 tracking-tight">
-              Современные технологии для вашей красоты
+            <h1 className="font-heading text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-tight">
+              Студия коррекции фигуры
+              <span className="block mt-2 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                Крио Плюс
+              </span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              Экспертные процедуры по коррекции фигуры с применением инновационных методик: 
-              криолиполиз, вибромассаж, липолитические программы
+            <p className="text-xl md:text-2xl text-muted-foreground mb-4 leading-relaxed">
+              Преобразите своё тело с помощью передовых методик красоты и здоровья
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground/80 mb-10 max-w-2xl mx-auto">
+              Криолиполиз • Обёртывания • РФ-лифтинг • Аппаратный массаж • Кавитация
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button size="lg" onClick={() => scrollToSection('запись')}>
@@ -574,11 +579,11 @@ export default function Index() {
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
-              <Icon name="Sparkles" size={24} className="text-primary" />
-              <span className="font-heading text-lg font-bold">BeautyMed</span>
+              <Icon name="Snowflake" size={24} className="text-primary" />
+              <span className="font-heading text-lg font-bold">Крио Плюс</span>
             </div>
             <p className="text-sm text-muted-foreground text-center">
-              © 2024 BeautyMed. Все права защищены. Лицензия № ЛО-77-01-012345
+              © 2024 Крио Плюс. Все права защищены. Лицензия № ЛО-77-01-012345
             </p>
             <div className="flex gap-4">
               <Button variant="ghost" size="icon">
