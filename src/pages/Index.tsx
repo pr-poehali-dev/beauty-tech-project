@@ -48,19 +48,32 @@ export default function Index() {
       </header>
 
       <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-accent/30 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/20 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(14,165,233,0.1),transparent_50%)]" />
         <div className="container relative">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <Badge className="mb-6 text-base px-4 py-2" variant="secondary">
+            <Badge className="mb-8 text-base px-5 py-2 shadow-lg" variant="secondary">
               ✨ Премиум студия коррекции фигуры
             </Badge>
-            <h1 className="font-heading text-6xl md:text-8xl font-bold mb-8 tracking-tight leading-tight">
-              <span className="bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent">
-                КРИО+
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-4 leading-relaxed">
-              Преобразите своё тело с помощью передовых методик красоты и здоровья
+            
+            <div className="relative mb-8">
+              <div className="absolute inset-0 blur-3xl opacity-30 bg-gradient-to-r from-primary via-primary/50 to-primary/30 animate-pulse" />
+              <h1 className="font-heading text-7xl md:text-9xl font-black mb-2 tracking-wider leading-none relative">
+                <span className="inline-block bg-gradient-to-br from-primary via-blue-400 to-primary/60 bg-clip-text text-transparent drop-shadow-2xl">
+                  КРИО
+                </span>
+                <span className="inline-block bg-gradient-to-br from-primary to-blue-600 bg-clip-text text-transparent text-8xl md:text-[10rem] align-middle drop-shadow-2xl">
+                  +
+                </span>
+              </h1>
+              <div className="h-1 w-32 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
+            </div>
+
+            <p className="text-2xl md:text-3xl font-heading font-semibold text-foreground mb-3 tracking-wide">
+              Студия коррекции фигуры
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground mb-4 leading-relaxed italic">
+              Преобразите своё тело с помощью передовых методик
             </p>
             <p className="text-base md:text-lg text-muted-foreground/80 mb-10 max-w-2xl mx-auto">
               Криолиполиз • Обёртывания • РФ-лифтинг • Аппаратный массаж • Кавитация
