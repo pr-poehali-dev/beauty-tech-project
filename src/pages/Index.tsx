@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -7,6 +7,18 @@ import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 
 export default function Index() {
+  const [snowflakes, setSnowflakes] = useState<Array<{id: number, left: string, duration: string, delay: string, size: number}>>([]);
+
+  useEffect(() => {
+    const flakes = Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      duration: `${10 + Math.random() * 10}s`,
+      delay: `${Math.random() * 5}s`,
+      size: 4 + Math.random() * 6
+    }));
+    setSnowflakes(flakes);
+  }, []);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -50,6 +62,21 @@ export default function Index() {
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/20 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(14,165,233,0.1),transparent_50%)]" />
+        
+        {snowflakes.map((flake) => (
+          <div
+            key={flake.id}
+            className="absolute rounded-full bg-white/60 backdrop-blur-sm"
+            style={{
+              left: flake.left,
+              width: `${flake.size}px`,
+              height: `${flake.size}px`,
+              animation: `snowfall ${flake.duration} ${flake.delay} linear infinite`,
+              boxShadow: '0 0 10px rgba(255,255,255,0.5)'
+            }}
+          />
+        ))}
+        
         <div className="container relative">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <Badge className="mb-8 text-base px-5 py-2 shadow-lg" variant="secondary">
@@ -57,16 +84,16 @@ export default function Index() {
             </Badge>
             
             <div className="relative mb-8">
-              <div className="absolute inset-0 blur-3xl opacity-30 bg-gradient-to-r from-primary via-primary/50 to-primary/30 animate-pulse" />
-              <h1 className="font-heading text-7xl md:text-9xl font-black mb-2 tracking-wider leading-none relative">
-                <span className="inline-block bg-gradient-to-br from-primary via-blue-400 to-primary/60 bg-clip-text text-transparent drop-shadow-2xl">
+              <div className="absolute inset-0 blur-3xl opacity-30 bg-gradient-to-r from-primary via-primary/50 to-primary/30 animate-glow" />
+              <h1 className="font-heading text-7xl md:text-9xl font-black mb-2 tracking-wider leading-none relative animate-scale-in">
+                <span className="inline-block bg-gradient-to-br from-primary via-blue-400 to-primary/60 bg-clip-text text-transparent drop-shadow-2xl animate-float">
                   КРИО
                 </span>
-                <span className="inline-block bg-gradient-to-br from-primary to-blue-600 bg-clip-text text-transparent text-8xl md:text-[10rem] align-middle drop-shadow-2xl">
+                <span className="inline-block bg-gradient-to-br from-primary to-blue-600 bg-clip-text text-transparent text-8xl md:text-[10rem] align-middle drop-shadow-2xl" style={{animationDelay: '0.2s'}}>
                   +
                 </span>
               </h1>
-              <div className="h-1 w-32 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
+              <div className="h-1 w-32 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent rounded-full animate-fade-in" />
             </div>
 
             <p className="text-2xl md:text-3xl font-heading font-semibold text-foreground mb-3 tracking-wide">
