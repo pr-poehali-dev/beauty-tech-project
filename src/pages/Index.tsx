@@ -242,6 +242,82 @@ export default function Index() {
               </Card>
             ))}
           </div>
+          
+          <div className="mt-16 max-w-6xl mx-auto">
+            <div className="text-center mb-8">
+              <Badge className="mb-4" variant="default">
+                Специальные предложения
+              </Badge>
+              <h3 className="font-heading text-2xl md:text-3xl font-bold mb-4">
+                Выгодные пакеты процедур
+              </h3>
+              <p className="text-muted-foreground">
+                Сэкономьте до 30% при покупке курса
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: 'Стройность',
+                  description: '5 процедур кавитации + 3 вибромассажа',
+                  oldPrice: '45 000',
+                  newPrice: '32 000',
+                  discount: '-29%',
+                  features: ['Ультразвуковая кавитация x5', 'Вибромассаж x3', 'Консультация специалиста', 'Индивидуальная программа']
+                },
+                {
+                  title: 'Детокс',
+                  description: '4 детокс обёртывания + 2 горячее-холодное',
+                  oldPrice: '29 000',
+                  newPrice: '20 500',
+                  discount: '-29%',
+                  features: ['Детокс обёртывания x4', 'Горячее-холодное обёртывание x2', 'Дренажный массаж', 'Рекомендации по питанию'],
+                  popular: true
+                },
+                {
+                  title: 'Лифтинг',
+                  description: '6 РФ-лифтинг + 3 лифтинг обёртывания',
+                  oldPrice: '51 000',
+                  newPrice: '36 000',
+                  discount: '-29%',
+                  features: ['РФ-лифтинг x6', 'Лифтинг обёртывания x3', 'Консультация косметолога', 'Программа домашнего ухода']
+                }
+              ].map((pkg, i) => (
+                <Card key={i} className={`relative ${pkg.popular ? 'border-primary shadow-lg scale-105' : ''}`}>
+                  {pkg.popular && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                      <Badge className="bg-primary">Хит продаж</Badge>
+                    </div>
+                  )}
+                  <CardHeader>
+                    <CardTitle className="font-heading text-xl">{pkg.title}</CardTitle>
+                    <CardDescription>{pkg.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex items-end gap-2">
+                      <span className="text-sm text-muted-foreground line-through">{pkg.oldPrice} ₽</span>
+                      <span className="text-3xl font-bold text-primary">{pkg.newPrice} ₽</span>
+                      <Badge variant="destructive" className="mb-1">{pkg.discount}</Badge>
+                    </div>
+                    
+                    <div className="space-y-2 pt-4 border-t">
+                      {pkg.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center text-sm">
+                          <Icon name="Check" size={16} className="text-primary mr-2 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <Button className="w-full mt-4" size="lg" variant={pkg.popular ? 'default' : 'outline'}>
+                      Купить курс
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
