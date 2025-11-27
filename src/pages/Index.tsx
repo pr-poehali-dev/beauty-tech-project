@@ -191,22 +191,61 @@ export default function Index() {
               Реальные результаты наших клиентов
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[1, 2, 3].map((i) => (
-              <Card key={i} className="overflow-hidden">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                image: 'https://cdn.poehali.dev/projects/1c3ec3aa-44cb-4eca-824d-76aa3ffab0b2/files/7d89f7e7-6735-46db-9327-c6e3f8d003ca.jpg',
+                service: 'Криолиполиз',
+                description: 'Курс из 3 процедур',
+                result: 'Уменьшение объёма на 4 см'
+              },
+              {
+                image: 'https://cdn.poehali.dev/projects/1c3ec3aa-44cb-4eca-824d-76aa3ffab0b2/files/153457b7-9991-41fb-b795-5307644f4b52.jpg',
+                service: 'Детокс обёртывания',
+                description: 'Программа детокса, 5 процедур',
+                result: 'Улучшение качества кожи, -3 см'
+              },
+              {
+                image: 'https://cdn.poehali.dev/projects/1c3ec3aa-44cb-4eca-824d-76aa3ffab0b2/files/0a3830e9-a33e-425d-a08a-9be759556f20.jpg',
+                service: 'РФ-лифтинг',
+                description: 'Курс RF-лифтинга, 6 процедур',
+                result: 'Подтяжка кожи, видимый лифтинг'
+              },
+              {
+                image: 'https://cdn.poehali.dev/projects/1c3ec3aa-44cb-4eca-824d-76aa3ffab0b2/files/3212e747-c016-474d-8047-d78f3291236d.jpg',
+                service: 'Ультразвуковая кавитация',
+                description: 'Программа кавитации, 5 сеансов',
+                result: 'Уменьшение объёма на 5 см'
+              },
+              {
+                image: 'https://cdn.poehali.dev/projects/1c3ec3aa-44cb-4eca-824d-76aa3ffab0b2/files/af9f9170-5563-4459-abaf-2c7fb67a4fc9.jpg',
+                service: 'Вибро- и вакуумный массаж',
+                description: 'Антицеллюлитная программа, 8 сеансов',
+                result: 'Сокращение целлюлита, подтяжка'
+              },
+              {
+                image: 'https://cdn.poehali.dev/projects/1c3ec3aa-44cb-4eca-824d-76aa3ffab0b2/files/3d1e4f00-aaa4-49f1-a249-763d643500af.jpg',
+                service: 'Лифтинг обёртывания',
+                description: 'Комплекс лифтинг-процедур, 4 сеанса',
+                result: 'Повышение тонуса кожи'
+              }
+            ].map((item, i) => (
+              <Card key={i} className="overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="aspect-square relative bg-muted">
                   <img 
-                    src="https://cdn.poehali.dev/projects/1c3ec3aa-44cb-4eca-824d-76aa3ffab0b2/files/80e7cbda-5315-4f48-87e8-652220ab976c.jpg"
-                    alt={`Результат ${i}`}
+                    src={item.image}
+                    alt={item.service}
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <CardContent className="pt-4">
                   <div className="space-y-2">
-                    <Badge variant="secondary">Криолиполиз</Badge>
-                    <p className="text-sm text-muted-foreground">
-                      Программа коррекции, 4 процедуры
-                    </p>
+                    <Badge variant="secondary">{item.service}</Badge>
+                    <p className="text-sm font-medium">{item.description}</p>
+                    <div className="flex items-center text-sm text-primary">
+                      <Icon name="TrendingUp" size={16} className="mr-2" />
+                      {item.result}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
